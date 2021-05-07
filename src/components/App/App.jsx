@@ -3,6 +3,12 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 
+import Home from '../Home/Home';
+import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
+import Supported from '../Supported/Supported';
+import Comments from '../Comments/Comments';
+
 function App() {
 
   return (

@@ -8,12 +8,16 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+const surveyStore = (state = {}, action) => {
 
+
+    return state;
+}
 
 const storeInstance = createStore(
     // reducers go inside our store - these are specific to our app
     combineReducers({
-        
+        surveyStore,
     }
     ),
     // Also, add our middleware for the logger
