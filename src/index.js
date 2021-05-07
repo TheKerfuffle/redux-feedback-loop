@@ -10,6 +10,21 @@ import logger from 'redux-logger';
 
 const surveyStore = (state = {}, action) => {
 
+    if (action.type === 'SET_FEELING') {
+        return {...state, [action.payload.property]: action.payload.value};
+    }
+    else if (action.type === 'SET_UNDERSTANDING') {
+        return {...state, [action.payload.property]: action.payload.value};
+    }
+    else if (action.type === 'SET_SUPPORTED') {
+        return {...state, [action.payload.property]: action.payload.value};
+    }
+    else if (action.type === 'SET_COMMENTS') {
+        return {...state, [action.payload.property]: action.payload.value};
+    }
+    else if (action.type === 'RESET_SURVEY') {
+        return {};
+    }
 
     return state;
 }

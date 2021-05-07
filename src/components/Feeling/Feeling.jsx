@@ -1,16 +1,19 @@
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
 
 function Feeling() {
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
     let [feeling, setFeeling] = useState('');
 
-    const goodFeeling = feeling >= 0 && feeling <= 5;
+    const validFeeling = feeling > 0 && feeling <= 5;
 
     function toUnderstanding() {
-        history.pushState('/understanding');
+        dispatch({ type: 'SET_FEELING', payload: {property: 'feeling', value: feeling} });
+        history.push('/understanding');
     }
 
     return (
@@ -19,7 +22,7 @@ function Feeling() {
                 <input type="number" value={feeling} placeholder="0 - 5"
                 onChange={(event) => setFeeling(event.target.value)}/>
 
-                <button type="submit" disabled={!goodFeeling}>Next</button>
+                <button type="submit" disabled={!validFeeling}>Next</button>
             </form>
         </>
 
