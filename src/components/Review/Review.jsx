@@ -13,7 +13,7 @@ function Review() {
     }
 
     function handleSubmit() {
-        history.push('/complete')
+        history.push('/complete');
     }
 
     return (
