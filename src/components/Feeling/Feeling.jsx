@@ -12,18 +12,19 @@ function Feeling() {
     const validFeeling = feeling > 0 && feeling <= 5;
 
     function toUnderstanding() {
-        dispatch({ type: 'SET_FEELING', payload: {property: 'feeling', value: feeling} });
+        dispatch({ type: 'SET_PROPERTY', payload: { property: 'feeling', value: feeling } });
         history.push('/understanding');
     }
 
     return (
         <>
-            <form onSubmit={toUnderstanding}>
-                <input type="number" value={feeling} placeholder="0 - 5"
-                onChange={(event) => setFeeling(event.target.value)}/>
+            <h3>How are you feeling today?</h3>
 
-                <button type="submit" disabled={!validFeeling}>Next</button>
-            </form>
+            <input type="number" value={feeling} placeholder="0 - 5"
+                onChange={(event) => setFeeling(event.target.value)} />
+
+            <button onClick={toUnderstanding} disabled={!validFeeling}>Next</button>
+
         </>
 
     )

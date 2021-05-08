@@ -10,18 +10,12 @@ import logger from 'redux-logger';
 
 const surveyStore = (state = {}, action) => {
 
-    if (action.type === 'SET_FEELING') {
+    // All dispatches will set a new property in the same way,
+    // so we only need one path for that.
+    if (action.type === 'SET_PROPERTY') {
         return {...state, [action.payload.property]: action.payload.value};
     }
-    else if (action.type === 'SET_UNDERSTANDING') {
-        return {...state, [action.payload.property]: action.payload.value};
-    }
-    else if (action.type === 'SET_SUPPORTED') {
-        return {...state, [action.payload.property]: action.payload.value};
-    }
-    else if (action.type === 'SET_COMMENTS') {
-        return {...state, [action.payload.property]: action.payload.value};
-    }
+    // Resets the survey to being empty
     else if (action.type === 'RESET_SURVEY') {
         return {};
     }
@@ -30,12 +24,13 @@ const surveyStore = (state = {}, action) => {
 }
 
 const storeInstance = createStore(
-    // reducers go inside our store - these are specific to our app
+    // I included combineReducers because i'd rather set up the code 
+    // to be able to handle added reducers before I add them.
     combineReducers({
         surveyStore,
     }
     ),
-    // Also, add our middleware for the logger
+
     applyMiddleware(
         logger
     )

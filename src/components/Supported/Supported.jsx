@@ -12,18 +12,19 @@ function Supported() {
     const validSupported = supported > 0 && supported <= 5;
 
     function toComments() {
-        dispatch({ type: 'SET_SUPPORTED', payload: {property: 'supported', value: supported} });
+        dispatch({ type: 'SET_PROPERTY', payload: { property: 'supported', value: supported } });
         history.push('/comments');
     }
 
     return (
         <>
-            <form onSubmit={toComments}>
-                <input type="number" value={supported} placeholder="0 - 5"
-                onChange={(event) => setSupported(event.target.value)}/>
+            <h3>Do you feel supported?</h3>
 
-                <button type="submit" disabled={!validSupported}>Next</button>
-            </form>
+            <input type="number" value={supported} placeholder="0 - 5"
+                onChange={(event) => setSupported(event.target.value)} />
+
+            <button onClick={toComments} disabled={!validSupported}>Next</button>
+
         </>
 
     )

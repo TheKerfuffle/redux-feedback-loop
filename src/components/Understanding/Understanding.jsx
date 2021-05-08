@@ -12,18 +12,19 @@ function Understanding() {
     const validUnderstanding = understanding > 0 && understanding <= 5;
 
     function toSupported() {
-        dispatch({ type: 'SET_UNDERSTANDING', payload: {property: 'understanding', value: understanding} });
+        dispatch({ type: 'SET_PROPERTY', payload: { property: 'understanding', value: understanding } });
         history.push('/supported');
     }
 
     return (
         <>
-            <form onSubmit={toSupported}>
-                <input type="number" value={understanding} placeholder="0 - 5"
-                onChange={(event) => setUnderstanding(event.target.value)}/>
+            <h3>How well are you understanding the content?</h3>
 
-                <button type="submit" disabled={!validUnderstanding}>Next</button>
-            </form>
+            <input type="number" value={understanding} placeholder="0 - 5"
+                onChange={(event) => setUnderstanding(event.target.value)} />
+
+            <button onClick={toSupported} disabled={!validUnderstanding}>Next</button>
+
         </>
 
     )
