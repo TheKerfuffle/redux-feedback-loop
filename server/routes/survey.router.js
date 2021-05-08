@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
     const newComments = req.body.comments;
 
     const sqlQuery = `INSERT INTO "feedback" 
-            (feeling, understanding, supported, comments) 
+            (feeling, understanding, support, comments) 
             VALUES ($1, $2, $3, $4)`;
 
     pool.query(sqlQuery, 
