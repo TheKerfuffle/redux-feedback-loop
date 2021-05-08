@@ -1,13 +1,26 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Feeling() {
 
+    const survey = useSelector(store => store.surveyStore);
     const history = useHistory();
     const dispatch = useDispatch();
 
     let [feeling, setFeeling] = useState('');
+
+    useEffect(() => {
+        setFeelingState();
+    }, [])
+
+    function setFeelingState() {
+        if (survey.feeling === undefined) {
+            setFeeling('');
+        } else {
+            setFeeling(survey.feeling);
+        }
+    }
 
     const validFeeling = feeling > 0 && feeling <= 5;
 
@@ -19,7 +32,7 @@ function Feeling() {
     return (
         <>
             <h3>How are you feeling today?</h3>
-
+            
             <input type="number" value={feeling} placeholder="0 - 5"
                 onChange={(event) => setFeeling(event.target.value)} />
 
