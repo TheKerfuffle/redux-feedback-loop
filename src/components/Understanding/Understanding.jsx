@@ -88,7 +88,7 @@ function Understanding() {
                             <Grid item xs={2}>
                             <Button variant="contained"
                                     onClick={toFeeling}
-                                    endIcon={<KeyboardArrowLeftIcon />}>
+                                    startIcon={<KeyboardArrowLeftIcon />}>
                                     Back
                                 </Button>
                             </Grid>

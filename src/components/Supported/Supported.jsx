@@ -2,7 +2,20 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
+import { Grid, Paper, Typography, Button, makeStyles } from '@material-ui/core';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
+
+const useStyles = makeStyles({
+    title: {
+        textDecoration: 'underline',
+        marginBottom: 20
+    },
+});
+
 function Supported() {
+
+    const classes = useStyles();
 
     const survey = useSelector(store => store.surveyStore);
     const history = useHistory();
@@ -35,13 +48,54 @@ function Supported() {
 
     return (
         <>
-            <h3>Do you feel supported?</h3>
+            <Grid className={classes.feedback} container justify='center'>
+                <Grid item xs={10} >
+                    <Paper>
+                        <Grid item xs={12}>
+                            <Grid container justify='center'>
+                                <Typography
+                                    variant="h4"
+                                    color="primary"
+                                    className={classes.title}
+                                >
+                                    Do you feel supported?
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid container justify='center'>
+                            <Grid item xs={3}>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <input type="number" value={supported} placeholder="0 - 5"
+                                    onChange={(event) => setSupported(event.target.value)} />
+                            </Grid>
+                            <Grid item xs={3}>
+                            </Grid>
+                        </Grid>
+                        <Grid container justify='center' >
+                            <Grid item xs={2}>
+                                <Button variant="contained"
+                                    onClick={toUnderstanding}
+                                    startIcon={<KeyboardArrowLeftIcon />}>
+                                    Back
+                                </Button>
+                            </Grid>
+                            <Grid item xs={8}>
 
-            <button onClick={toUnderstanding}>Back</button>
-            <input type="number" value={supported} placeholder="0 - 5"
-                onChange={(event) => setSupported(event.target.value)} />
-
-            <button onClick={toComments} disabled={!validSupported}>Next</button>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Button variant="contained"
+                                    color="primary"
+                                    onClick={toComments}
+                                    disabled={!validSupported}
+                                    endIcon={<KeyboardArrowRightIcon />}>
+                                    Next
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Paper>
+                </Grid>
+            </Grid>
 
         </>
 
