@@ -23,9 +23,12 @@ function App() {
       <Router>
         <nav>
           <ul>
-            <li>
+            {/* Helpful as I started the project to be 
+            able to go back to the home page at any time */}
+            
+            {/* <li>
               <Link to='/'>Home</Link>
-            </li>
+            </li> */}
 
           </ul>
         </nav>
