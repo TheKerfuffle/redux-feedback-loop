@@ -52,13 +52,8 @@ function Understanding() {
             <Grid className={classes.feedback} container justify='center'>
                 <Grid item xs={10} >
                     <Paper>
-
-
-
                         <Grid item xs={12}>
                             <Grid container justify='center'>
-
-
                                 <Typography
                                     variant="h4"
                                     color="primary"
@@ -66,7 +61,6 @@ function Understanding() {
                                 >
                                     How well are you understanding the content?
                                 </Typography>
-
                             </Grid>
                         </Grid>
 
@@ -81,9 +75,8 @@ function Understanding() {
                             <Grid item xs={3}>
 
                             </Grid>
-
                         </Grid>
-
+                        
                         <Grid container justify='center' >
                             <Grid item xs={2}>
                             <Button variant="contained"

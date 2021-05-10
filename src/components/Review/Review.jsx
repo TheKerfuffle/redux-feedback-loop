@@ -21,17 +21,21 @@ function Review() {
     const dispatch = useDispatch();
     const history = useHistory();
 
+    // Takes us back to the start of the survey
+    //  and clears the survey reducer
     function redoSurvey() {
         history.push('/');
         dispatch({ type: 'RESET_SURVEY' });
     }
 
+    // Submits feedback to the database through an axios post route
     function handleSubmit() {
         history.push('/complete');
         addSurvey();
         dispatch({ type: 'RESET_SURVEY' });
     }
 
+    // Handles the axios post submit of the feedback
     function addSurvey() {
         axios({
             method: 'POST',
@@ -49,12 +53,10 @@ function Review() {
 
     return (
         <>
-
-
-
             <Grid className={classes.feedback} container justify='center'>
                 <Grid item xs={10} >
                     <Paper>
+
                         <Grid item xs={12}>
                             <Grid container justify='center'>
                                 <Typography
@@ -66,6 +68,7 @@ function Review() {
                                 </Typography>
                             </Grid>
                         </Grid>
+
                         <Grid item xs={12}>
                             <Grid container justify='center'>
                                 <Typography
@@ -76,6 +79,7 @@ function Review() {
                                 </Typography>
                             </Grid>
                         </Grid>
+
                         <Grid item xs={12}>
                             <Grid container justify='center'>
                                 <Typography
@@ -86,6 +90,7 @@ function Review() {
                                 </Typography>
                             </Grid>
                         </Grid>
+
                         <Grid item xs={12}>
                             <Grid container justify='center'>
                                 <Typography
@@ -96,6 +101,7 @@ function Review() {
                                 </Typography>
                             </Grid>
                         </Grid>
+
                         <Grid item xs={12}>
                             <Grid container justify='center'>
                                 <Typography

@@ -39,6 +39,7 @@ function Complete() {
                                 </Typography>
                             </Grid>
                         </Grid>
+
                         <Grid item xs={12}>
                             <Grid container justify='center'>
                                 <Typography
@@ -49,6 +50,7 @@ function Complete() {
                                 </Typography>
                             </Grid>
                         </Grid>
+
                         <Grid item xs={12}>
                             <Grid container justify='center'>
                                 <Button variant="contained"

@@ -62,6 +62,7 @@ function Comments() {
                                 </Typography>
                             </Grid>
                         </Grid>
+                        
                         <Grid container justify='center'>
                             <Grid item xs={3}>
 
@@ -74,6 +75,7 @@ function Comments() {
 
                             </Grid>
                         </Grid>
+
                         <Grid container justify='center' >
                             <Grid item xs={2}>
                                 <Button variant="contained"
@@ -83,6 +85,7 @@ function Comments() {
                                 </Button>
                             </Grid>
                             <Grid item xs={8}>
+
                             </Grid>
                             <Grid item xs={2}>
                                 <Button variant="contained"

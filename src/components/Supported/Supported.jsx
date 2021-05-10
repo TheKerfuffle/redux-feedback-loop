@@ -62,6 +62,7 @@ function Supported() {
                                 </Typography>
                             </Grid>
                         </Grid>
+
                         <Grid container justify='center'>
                             <Grid item xs={3}>
                             </Grid>
@@ -72,6 +73,7 @@ function Supported() {
                             <Grid item xs={3}>
                             </Grid>
                         </Grid>
+                        
                         <Grid container justify='center' >
                             <Grid item xs={2}>
                                 <Button variant="contained"
